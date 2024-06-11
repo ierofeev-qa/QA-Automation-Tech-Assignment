@@ -8,7 +8,7 @@ async function copyTextToClipboard(page: Page, text: string) {
 
 async function pasteFromClipboardByHotkey(page: Page) {
   await test.step('Paste text from clipboard by hotkey', async () => {
-    await page.keyboard.press('Meta+V');
+    await page.keyboard.press('Control+V');
   });
 }
 

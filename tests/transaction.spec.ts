@@ -5,7 +5,7 @@ import {sleep} from 'components/authDialog';
 import {getElementAttributeValue, waitForElementState} from 'helpers/elements.helper';
 import {TEST_INSTANCES} from 'config/instances';
 
-test.only('transaction', async ({ context }) => {
+test('transaction', async ({ context }) => {
   const firstTab = context.pages()[0];
   const secondTab = context.pages()[1];
   let phantomPage = new PhantomPage(secondTab);
