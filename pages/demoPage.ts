@@ -51,6 +51,6 @@ export default class DemoPage extends BasePage {
     const secondPage = await this.page.context().waitForEvent('page');
     const authDialog = new AuthDialog(secondPage);
     await authDialog.loginByEmail(login, password);
-    await expect(this.locatorLogoutButton).toContainText(process.env.TEST_USER_ID);
+    await expect(this.locatorLogoutButton, 'Expect Logout button to contain user ID').toContainText(process.env.TEST_USER_ID);
   }
 }

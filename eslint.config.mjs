@@ -7,7 +7,7 @@ export default [
     languageOptions: { globals: globals.browser }
   },
   {
-    ignores: ['**/phantom/**', '**/allure-report/**', '**/allure-results/**']
+    ignores: ['**/.phantom-extension/**', '**/allure-report/**', '**/allure-results/**']
   },
   {
     rules: {

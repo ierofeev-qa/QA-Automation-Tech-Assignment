@@ -4,13 +4,11 @@ export default class Input {
   page: Page;
   locator: Locator;
   name: string;
-  loaderLocator: Locator;
 
   constructor(page: Page, inputLocator: Locator, name: string = '') {
     this.page = page;
     this.locator = inputLocator;
     this.name = name;
-    this.loaderLocator = this.locator.locator('..').locator('[class*="status-icon"] [class*="radial-loader"]');
   }
 
   async click (): Promise<void> {

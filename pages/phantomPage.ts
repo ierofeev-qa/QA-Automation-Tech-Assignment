@@ -9,18 +9,16 @@ export default class PhantomPage extends BasePage {
   locatorImportWalletButton: Locator;
   locatorImportSecretPhraseButton: Locator;
   locatorSecretPhraseInput: Locator;
-  locatorSubmitSecretButton: Locator;
+  locatorContinueButton: Locator;
   locatorViewAccountsButton: Locator;
   locatorPasswordInput: Locator;
   locatorConfirmPasswordInput: Locator;
   locatorTermsOfUseCheckbox: Locator;
   locatorUnderstoodButton: Locator;
-
   locatorBurgerMenuButton: Locator;
   locatorSettingsButton: Locator;
   locatorDeveloperSettingsButton: Locator;
   locatorTestnetToggle: Locator;
-
   locatorConnectButton: Locator;
   locatorOnboardingForm: Locator;
 
@@ -30,18 +28,16 @@ export default class PhantomPage extends BasePage {
     this.locatorImportWalletButton = this.page.getByTestId('import-wallet-button');
     this.locatorImportSecretPhraseButton = this.page.getByTestId('import-seed-phrase-button');
     this.locatorSecretPhraseInput = this.page.getByTestId('secret-recovery-phrase-word-input-0');
-    this.locatorSubmitSecretButton = this.page.getByTestId('onboarding-form-submit-button');
+    this.locatorContinueButton = this.page.getByTestId('onboarding-form-submit-button');
     this.locatorViewAccountsButton = this.page.getByTestId('onboarding-form-secondary-button');
     this.locatorPasswordInput = this.page.getByTestId('onboarding-form-password-input');
     this.locatorConfirmPasswordInput = this.page.getByTestId('onboarding-form-confirm-password-input');
     this.locatorTermsOfUseCheckbox = this.page.getByTestId('onboarding-form-terms-of-service-checkbox');
     this.locatorUnderstoodButton = this.page.getByTestId('primary-button');
-
     this.locatorBurgerMenuButton = this.page.getByTestId('settings-menu-open-button');
     this.locatorSettingsButton = this.page.getByTestId('sidebar_menu-button-settings');
     this.locatorDeveloperSettingsButton = this.page.getByTestId('settings-item-developer-settings');
     this.locatorTestnetToggle = this.page.getByTestId('toggleTestNetwork');
-
     this.locatorConnectButton = this.page.getByTestId('primary-button');
     this.locatorOnboardingForm = this.page.getByTestId('onboarding-form');
   }
@@ -63,11 +59,7 @@ export default class PhantomPage extends BasePage {
   }
 
   get submitSecretButton(): Button {
-    return new Button(this.page, this.locatorSubmitSecretButton, 'Submit secret phrase');
-  }
-
-  async login() {
-    await this.importWalletButton.click();
+    return new Button(this.page, this.locatorContinueButton, 'Submit secret phrase');
   }
 
   get passwordInput(): Input {
@@ -102,8 +94,8 @@ export default class PhantomPage extends BasePage {
     return new Button(this.page, this.locatorConnectButton, 'Connect');
   }
 
-  async connectWallet(secretPhrase: string, password: string) {
-    await test.step('Connect Phantom wallet', async () => {
+  async connectWallet(secretPhrase: string, password: string): Promise<void> {
+    await test.step('Connect Phantom wallet via extension', async () => {
       await this.importWalletButton.click();
       await this.importSecretPhraseButton.click();
       await this.secretPhraseInput.click();

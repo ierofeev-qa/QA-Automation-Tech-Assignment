@@ -2,8 +2,8 @@ import { type Page, test } from '@playwright/test';
 import { TEST_INSTANCES } from 'config/instances';
 
 export default abstract class BasePage {
-  protected page: Page;
-  protected rootUrl: string;
+  page: Page;
+  rootUrl: string;
   relUrl: string;
 
   protected constructor (
