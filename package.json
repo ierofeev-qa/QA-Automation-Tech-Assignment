@@ -1,0 +1,24 @@
+{
+  "name": "faraway-tech-assignment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "allure": "allure generate --clean && allure open",
+    "lint": "eslint ."
+  },
+  "author": "ierofeev",
+  "license": "ISC",
+  "devDependencies": {
+    "@eslint/create-config": "^1.0.0",
+    "@playwright/test": "^1.44.1",
+    "@types/node": "^20.14.2",
+    "allure-playwright": "^3.0.0-beta.3",
+    "eslint": "^8.57.0",
+    "globals": "^15.4.0",
+    "typescript-eslint": "^7.12.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5"
+  }
+}
