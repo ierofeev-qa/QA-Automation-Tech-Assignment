@@ -9,20 +9,20 @@ Nodejs is required to run the frontend tests:
 
 https://nodejs.org/en/download/
 
-Before running the tests, install the dependencies by running
+- Before running the tests, install the dependencies by running
 
 ```sh
 npm install 
 ```
 
-After the packages are installed, install the Playwright browsers by running
+- After the packages are installed, install the Playwright browsers by running
 
 ```sh
 npx playwright install
 ```
 
 
-To run the tests use command
+- To run the tests use command
 
 
 ```sh
@@ -31,13 +31,13 @@ ENV=sandbox npx playwright test
 
 Tests are running in parallel mode by default
 
-To run linter use command
+- To run linter use command
 
 ```sh
 npm run lint
 ```
 
-To generate and open Аllure report after test run use command
+- To generate and open Аllure report after test run use command
 
 ```sh
 npm run allure-report
