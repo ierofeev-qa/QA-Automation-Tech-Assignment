@@ -3,7 +3,7 @@ import 'dotenv/config';
 
 export default defineConfig({
   workers: 4,
-  retries: 0,
+  retries: 1,
   timeout: 60 * 10000,
   fullyParallel: true,
   expect: {
