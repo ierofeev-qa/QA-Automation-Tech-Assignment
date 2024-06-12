@@ -24,7 +24,7 @@ test('transaction', async ({ context }) => {
 
     await demoPage.connectByNewTab(process.env.TEST_EMAIL, process.env.TEST_CODE);
 
-    await demoPage.networkDropdown.selectItem('Solana');
+    await demoPage.networkDropdown.selectItem('Ethereum');
     const itemRelUrl = await getElementAttributeValue(demoPage.locatorItemImage, 'src');
     const itemFullUrl = `${TEST_INSTANCES[process.env.ENV]}${itemRelUrl}`;
     await demoPage.purchaseInput.fill(itemFullUrl);

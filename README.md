@@ -2,6 +2,9 @@
 
 **This is a TypeScript/Playwright-based UI test framework built using Page Object/Page Component patterns**
 
+**To run tests locally, you need to set the correct environment variables via a .env file. Ask the author to share one at [ierofeev.qa@gmail.com]()**
+
+
 Nodejs is required to run the frontend tests:
 
 https://nodejs.org/en/download/
@@ -18,7 +21,6 @@ After the packages are installed, install the Playwright browsers by running
 npx playwright install
 ```
 
-To run tests locally, you need to set the correct environment variables via a .env file. Ask the author to share one at [ierofeev.qa@gmail.com]()
 
 To run the tests use command
 
@@ -42,5 +44,3 @@ npm run allure-report
 ```
 
 When running in CI, the Allure report is generated automatically and is available as a run artifact
-
-To run tests locally you need to set correct envs via .env file - ask author to share one: ierofeev.qa@gmail.com
