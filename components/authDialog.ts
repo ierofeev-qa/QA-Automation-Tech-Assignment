@@ -3,12 +3,6 @@ import Button from 'components/controls/button';
 import Input from 'components/controls/input';
 import {copyTextToClipboard, pasteFromClipboardByHotkey} from 'helpers/browser.hepler';
 
-export const sleep = async (timeout: number = 1000) => {
-  await new Promise<void>((resolve) => {
-    setTimeout(() => { resolve(); }, timeout);
-  });
-};
-
 export default class AuthDialog {
   page: Page;
   locatorEmailInput: Locator;
@@ -17,7 +11,6 @@ export default class AuthDialog {
 
   constructor (page: Page) {
     this.page = page;
-
     this.locatorEmailInput = this.page.getByTestId('email-form-email-input');
     this.locatorSubmitButton = this.page.getByTestId('email-form-submit-button');
     this.locatorCodeInput = this.page.getByTestId('verify-email-form-code-input');
@@ -31,7 +24,7 @@ export default class AuthDialog {
     return new Input(this.page, this.locatorEmailInput, 'Email');
   }
 
-  async loginByEmail (email: string, code: string) {
+  async loginByEmail (email: string, code: string): Promise<void> {
     await test.step('Login by email', async () => {
       await this.emailInput.fill(email);
       await this.submitButton.click();

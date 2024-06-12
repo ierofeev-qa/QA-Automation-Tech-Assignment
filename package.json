@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "allure": "allure generate --clean && allure open",
+    "allure-generate": "allure generate --clean",
+    "allure-report": "allure generate --clean && allure open",
     "lint": "eslint ."
   },
   "author": "ierofeev",
@@ -14,6 +15,7 @@
     "@playwright/test": "^1.44.1",
     "@types/node": "^20.14.2",
     "allure-playwright": "^3.0.0-beta.3",
+    "allure-commandline": "^2.27.0",
     "eslint": "^8.57.0",
     "globals": "^15.4.0",
     "typescript-eslint": "^7.12.0"
